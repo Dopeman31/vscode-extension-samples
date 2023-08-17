@@ -16,7 +16,7 @@
 		}
 
 		addPoint(/** @type {number} */ x, /** @type {number} */ y) {
-			this.stroke.push([x, y])
+			this.stroke.push([x, y]);
 		}
 	}
 
@@ -60,7 +60,7 @@
 
 		addPoint(/** @type {number} */ x, /** @type {number} */ y) {
 			if (this.currentStroke) {
-				this.currentStroke.addPoint(x, y)
+				this.currentStroke.addPoint(x, y);
 			}
 		}
 
@@ -219,7 +219,7 @@
 			outCtx.drawImage(this.drawingCanvas, 0, 0);
 
 			const blob = await new Promise(resolve => {
-				outCanvas.toBlob(resolve, 'image/png')
+				outCanvas.toBlob(resolve, 'image/png');
 			});
 
 			return new Uint8Array(await blob.arrayBuffer());
@@ -247,7 +247,7 @@
 			case 'update':
 				{
 					const strokes = body.edits.map(edit => new Stroke(edit.color, edit.stroke));
-					await editor.reset(body.content, strokes)
+					await editor.reset(body.content, strokes);
 					return;
 				}
 			case 'getFileData':
